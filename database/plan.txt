@@ -1,0 +1,51 @@
+cage_type_master
+	*S.no smallint  autoincrement
+	*type varchar - pk
+	*quantity smallint
+
+cage_location_master
+	*S.no smallint autoincrement
+	*location varchar - pk 
+	
+cage_master
+	*ID_Cage varchar - pk
+	*name_cage char
+	*size smallint
+	*type varchar - fk cage_type_master
+	*location varchar - fk cage_location_master
+	*doors smallint 
+	
+code_master
+	*ID_code pk
+	*type_code
+	*description_code
+	
+animal_master 
+	*ID_animal - pk
+	*ID_cage_ID 
+	*name_animal
+	*quantity_animal
+	
+maintance_person_master
+	*ID_person - pk
+	*name_person
+	
+cage_details
+	*ID_cage fk 
+	*size_cage
+	*cage_type fk cage_type_master
+	*location
+	*exhbit
+	*ID_animals fk animal master
+	*quantity
+log
+	*ID_cage 
+	*cage_status
+	*human_detector
+	*exhbit
+	
+alert
+	*ID_cage - FK
+	*ID_alert - FK
+	
+	
