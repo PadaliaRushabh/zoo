@@ -1,0 +1,23 @@
+{"table":
+	{"row_count":"1", 
+		"cols_count":"3",
+		"colns_name":["fname","lname","age"],
+		"row_content":[
+		
+			{
+				"element":"input",
+				"attribute":[{"name":"fname","value":"YourFirstName"}]				
+			},
+			{
+				"element":"input",
+				"attribute":[{"name":"lname","value":"YourLastname"}]
+			
+			},
+			{
+				"element":"button",
+				"attribute":[{"display_name":"Submit"}]
+			}
+
+		]
+	}
+}
