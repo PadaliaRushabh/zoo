@@ -7,7 +7,7 @@ cage_location_master
 	*S.no smallint autoincrement
 	*location varchar - pk 
 	
-cage_master+
+cage_master
 	*ID_Cage varchar - pk
 	*name_cage char
 	*size smallint
