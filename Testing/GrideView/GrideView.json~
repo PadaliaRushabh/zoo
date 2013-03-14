@@ -16,9 +16,7 @@
 			{
 				"element":"select",
 				"children":[
-						{"element":"option","innerHTML":"1"	},
-						{"element":"option","innerHTML":"2"	},
-						{"element":"option","innerHTML":"3"	}
+						{"element":"option","value":"{$value}","innerHTML":"{$display}"	},
 					]
 			}
 

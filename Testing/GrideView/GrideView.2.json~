@@ -3,25 +3,30 @@
 		"cols_count":3,
 		"cols_name":["fname","lname","age"],
 		"row_content":[
-		
 			{
 				"element":"input",
+				"id":"fname",
 				"attribute":[{"type":"text","name":"fname","value":"YourFirstName"}]				
 			},
 			{
 				"element":"input",
+				"id":"lname",
 				"attribute":[{"type":"text","name":"lname","value":"YourLastname"}]
-			
 			},
 			{
-				"element":"select",
-				"children":[
-						{"element":"option","innerHTML":"1"	},
-						{"element":"option","innerHTML":"2"	},
-						{"element":"option","innerHTML":"3"	}
-					]
+				"element":"dropdown",
+				"id":"age",
+				"attribute":[{"value":"{$value}","innerHTML":"{$display}"}]
 			}
-
-		]
+		],
+		"query":
+			{"age":[
+				{
+					"value":"select col1 from test",
+					"display":"select col2 from test"	
+				}
+			]
+		}
 	}
 }
+

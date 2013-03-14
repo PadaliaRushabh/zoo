@@ -1,0 +1,20 @@
+<?php
+
+$string = file_get_contents("GrideView.json");
+$json_a = json_decode($string, true);
+
+//foreach ($json_a->table as $table_attributes => $table_value) {
+//    echo $table_attributes + " " +$table_value ;
+//}
+
+var_dump($json_a);
+//echo $json_a->table->row_content[0]->element;
+//$e = $json_a['table']['row_content'][0]['element'];
+//echo $e;
+
+
+
+?>
+
+
+
