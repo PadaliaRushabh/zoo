@@ -1,1 +1,28 @@
-zoo/cage management system - Assignment 1
+Zoo/cage management system - Assignment 1
+
+DIR STRUCTURE
+
+└── php
+    ├── Misc
+    │   ├── Admin UI prototype beta
+    │   ├── log
+    │   └── Testing
+    └── ZOO Management
+        ├── database
+        └── PHP - ZOO Management
+
+FOLDER INFORMATION
+
+Admin UI prototype beta - Contains the beta version of Admin UI
+
+log - Is a classfile for generating log during program execution
+Testing - contains code which are in testing phase.
+Testing/GrideView - Contains code and json file to generate table dynamically like asp.net griddeview
+Testing/Message - contains code for async messaging passing between server and client.
+Zoo Management - Contains our working code
+of Zoo Management System and database files.
+Zoo Management/database - Contains sql script and ER diagram
+Zoo Management/PHP - ZOO Management - Contains our working code
+of Zoo Management System.
+
+
