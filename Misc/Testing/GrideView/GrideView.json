@@ -1,0 +1,27 @@
+{"table":
+	{"row_count":1, 
+		"cols_count":3,
+		"cols_name":["fname","lname","age"],
+		"row_content":[
+		
+			{
+				"element":"input",
+				"attribute":[{"type":"text","name":"fname","value":"YourFirstName"}]				
+			},
+			{
+				"element":"input",
+				"attribute":[{"type":"text","name":"lname","value":"YourLastname"}]
+			
+			},
+			{
+				"element":"select",
+				"children":[
+						{"element":"option","innerHTML":"1"	},
+						{"element":"option","innerHTML":"2"	},
+						{"element":"option","innerHTML":"3"	}
+					]
+			}
+
+		]
+	}
+}

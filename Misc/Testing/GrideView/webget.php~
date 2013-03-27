@@ -1,0 +1,73 @@
+<?php
+include('../../log/MyLogPHP-1.2.1.class.php');
+
+class webgetTable{
+	public $row_count, $cols_count;
+	public $json_array, $json_string;
+	public $log;
+	
+	public function __construct($json_file,$log = null){
+		try{
+			$this->log = $log;
+			$this->log->info('IN constructor');
+			
+			$this->json_string = file_get_contents($json_file);
+			$this->json_array = json_decode($this->json_string, TRUE);
+			
+			$this->log->info('END constructor');
+		}
+		catch(Exception $e){
+			$this->log->error($e->getMessage());
+		}
+	}
+
+	
+	public function GenerateTable(){
+		try{
+			$this->log->info('IN GenerateTable()');
+			
+			$this->GetRowCols();
+			FindDataSetByID();
+			
+			$this->log->info('END GenerateTable()');
+		}
+		catch(Exception $e){
+		echo "errr";
+			$this->log->error($e->getMessage());
+		}
+	}
+	
+	private function GetRowCols(){
+		try{
+			$this->log->info('IN GetRowCols()');
+			
+			$this->row_count = $this->json_array['table']['row_count'];
+			$this->cols_count = count($this->json_array['table']['cols_name']);
+			
+			$this->log->info('END GetRowCols()');
+		}
+		catch(Exception $e){
+			$this->log->error($e->getMessage());
+		}
+		
+			
+	}
+	private function FindDataSetByID(){
+		try{
+			$this->log->info('IN FindDataSetByID()');
+			
+			
+			
+			$this->log->info('END FindDataSetByID()');
+		
+		}
+		catch(Exception $e){
+			$this->log->error($e->getMessage());
+		}
+	}
+	
+}
+$log = new MyLogPHP();
+$obj = new webgetTable("GrideView.2.json",$log);
+$obj->GenerateTable();
+?>
