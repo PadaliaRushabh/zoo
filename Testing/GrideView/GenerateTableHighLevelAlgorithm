@@ -1,8 +1,0 @@
-GenerateTable(){
-	ReadStructure(){..}
-	GenerateHeader(){sizeof(cols_name)}
-	GenerateRows(row_count){
-		PopulateDataSet(){ .. }
-	}
-	
-}
