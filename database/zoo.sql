@@ -6,7 +6,7 @@
 -- Generation Time: Mar 14, 2013 at 09:23 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.6-1ubuntu1.2
-
+-- TODO: Create animal type table and some minor changes
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
