@@ -165,6 +165,13 @@ ALTER TABLE `cage_status`
 ALTER TABLE `user_action_log`
   ADD CONSTRAINT `user_action_log_ibfk_2` FOREIGN KEY (`ID_animal`) REFERENCES `animal_master` (`ID_Animal`),
   ADD CONSTRAINT `user_action_log_ibfk_1` FOREIGN KEY (`ID_code`) REFERENCES `code_master` (`ID_code`);
+  
+  
+--
+-- Constraints for table `animal_master`
+--
+ALTER TABLE `animal_master`
+  ADD CONSTRAINT `animal_master_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
