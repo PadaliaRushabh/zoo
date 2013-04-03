@@ -3,10 +3,10 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 14, 2013 at 09:23 PM
+-- Generation Time: Apr 03, 2013 at 11:08 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.6-1ubuntu1.2
--- TODO: Create animal type table and some minor changes
+
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS `animal_master` (
   `ID_cage` varchar(10) NOT NULL,
   `name_animal` text NOT NULL,
   `quantity_animal` int(11) NOT NULL,
-  PRIMARY KEY (`ID_Animal`)
+  PRIMARY KEY (`ID_Animal`),
+  KEY `animal_master_ibfk_1` (`ID_cage`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,6 +137,18 @@ CREATE TABLE IF NOT EXISTS `user_action_log` (
   KEY `ID_animal` (`ID_animal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_master`
+--
+
+CREATE TABLE IF NOT EXISTS `user_master` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Constraints for dumped tables
 --
@@ -144,8 +157,14 @@ CREATE TABLE IF NOT EXISTS `user_action_log` (
 -- Constraints for table `alert_details`
 --
 ALTER TABLE `alert_details`
-  ADD CONSTRAINT `alert_details_ibfk_2` FOREIGN KEY (`ID_Code`) REFERENCES `code_master` (`ID_code`),
-  ADD CONSTRAINT `alert_details_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
+  ADD CONSTRAINT `alert_details_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`),
+  ADD CONSTRAINT `alert_details_ibfk_2` FOREIGN KEY (`ID_Code`) REFERENCES `code_master` (`ID_code`);
+
+--
+-- Constraints for table `animal_master`
+--
+ALTER TABLE `animal_master`
+  ADD CONSTRAINT `animal_master_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
 
 --
 -- Constraints for table `cage_master`
@@ -163,15 +182,8 @@ ALTER TABLE `cage_status`
 -- Constraints for table `user_action_log`
 --
 ALTER TABLE `user_action_log`
-  ADD CONSTRAINT `user_action_log_ibfk_2` FOREIGN KEY (`ID_animal`) REFERENCES `animal_master` (`ID_Animal`),
-  ADD CONSTRAINT `user_action_log_ibfk_1` FOREIGN KEY (`ID_code`) REFERENCES `code_master` (`ID_code`);
-  
-  
---
--- Constraints for table `animal_master`
---
-ALTER TABLE `animal_master`
-  ADD CONSTRAINT `animal_master_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
+  ADD CONSTRAINT `user_action_log_ibfk_1` FOREIGN KEY (`ID_code`) REFERENCES `code_master` (`ID_code`),
+  ADD CONSTRAINT `user_action_log_ibfk_2` FOREIGN KEY (`ID_animal`) REFERENCES `animal_master` (`ID_Animal`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
