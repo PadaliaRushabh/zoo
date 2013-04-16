@@ -38,14 +38,22 @@ cage_details
 	*exhbit
 	*ID_animals fk animal master
 	*quantity
-log
-	*ID_cage 
+	
+cage_status_master
+	*ID_cage fk 
 	*cage_status
 	*human_detector
 	*exhbit
+
+alert_details
+	*ID_code fk
+	*ID_cage fk
+	*admin_message
+	*alert_status
+	*time_start
+	*time_end
 	
-alert
-	*ID_cage - FK
-	*ID_alert - FK
-	
-	
+user_action_log
+	*ID_code fk
+	*ID_Animal fk
+	*ID_Cage

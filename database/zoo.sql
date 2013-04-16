@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb1
+-- version 4.0.0-rc1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2013 at 11:08 AM
--- Server version: 5.5.29
--- PHP Version: 5.4.6-1ubuntu1.2
+-- Generation Time: Apr 15, 2013 at 10:09 PM
+-- Server version: 5.5.29-0ubuntu1
+-- PHP Version: 5.4.9-4ubuntu2
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -23,130 +23,115 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alert_details`
+-- Table structure for table `Alert_details_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `alert_details` (
-  `ID_Code` varchar(10) NOT NULL,
-  `ID_cage` varchar(10) NOT NULL,
-  `admin_message` text,
-  `alert_status` tinyint(1) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `Alert_details_tb` (
+  `ID_alert_details` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_code` varchar(10) NOT NULL,
+  `ID_cage` int(11) DEFAULT NULL,
+  `admin_message` text NOT NULL,
+  `isopen` tinyint(1) NOT NULL,
   `time_start` datetime NOT NULL,
   `time_end` datetime DEFAULT NULL,
-  KEY `ID_cage` (`ID_cage`),
-  KEY `ID_Code` (`ID_Code`)
+  PRIMARY KEY (`ID_alert_details`),
+  KEY `ID_code` (`ID_code`),
+  KEY `ID_cage` (`ID_cage`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `AnimalRecords_tb`
+--
+
+CREATE TABLE IF NOT EXISTS `AnimalRecords_tb` (
+  `ID_animalrecord` int(11) NOT NULL AUTO_INCREMENT,
+  `name_animal` char(40) NOT NULL,
+  PRIMARY KEY (`ID_animalrecord`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Animal_tb`
+--
+
+CREATE TABLE IF NOT EXISTS `Animal_tb` (
+  `ID_animal` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_cage` int(11) NOT NULL,
+  `ID_animalrecord` int(11) NOT NULL,
+  PRIMARY KEY (`ID_animal`),
+  KEY `ID_animalrecord` (`ID_animalrecord`),
+  KEY `ID_cage` (`ID_cage`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Cage_status_tb`
+--
+
+CREATE TABLE IF NOT EXISTS `Cage_status_tb` (
+  `ID_cage` int(11) NOT NULL DEFAULT '0',
+  `isopen` tinyint(1) NOT NULL,
+  `human_inside` int(11) NOT NULL,
+  `exhibit_inside` int(11) NOT NULL,
+  PRIMARY KEY (`ID_cage`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `animal_master`
+-- Table structure for table `Cage_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `animal_master` (
-  `ID_Animal` varchar(10) NOT NULL,
-  `ID_cage` varchar(10) NOT NULL,
-  `name_animal` text NOT NULL,
-  `quantity_animal` int(11) NOT NULL,
-  PRIMARY KEY (`ID_Animal`),
-  KEY `animal_master_ibfk_1` (`ID_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cage_master`
---
-
-CREATE TABLE IF NOT EXISTS `cage_master` (
-  `ID_cage` varchar(10) NOT NULL,
-  `name_cage` text NOT NULL,
-  `ID_type_cage` varchar(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Cage_tb` (
+  `ID_cage` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(30) NOT NULL,
   `size_height` int(11) NOT NULL,
   `size_width` int(11) NOT NULL,
   `size_length` int(11) NOT NULL,
-  `location_longitude` int(11) NOT NULL,
-  `location_latitude` int(11) NOT NULL,
-  `doors_cage` int(11) NOT NULL,
-  PRIMARY KEY (`ID_cage`),
-  KEY `ID_type_cage` (`ID_type_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `location_latitude` float NOT NULL,
+  `location_longitude` float NOT NULL,
+  `doors` int(11) NOT NULL,
+  PRIMARY KEY (`ID_cage`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cage_status`
+-- Table structure for table `Code_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `cage_status` (
-  `ID_cage` varchar(10) NOT NULL,
-  `cage_status` tinyint(1) NOT NULL,
-  `human_detector` tinyint(1) NOT NULL,
-  `exhibit_inside` tinyint(1) NOT NULL,
-  KEY `ID_cage` (`ID_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cage_type_master`
---
-
-CREATE TABLE IF NOT EXISTS `cage_type_master` (
-  `ID_type_cage` varchar(10) NOT NULL,
-  `description_type_cage` text NOT NULL,
-  `quantity_type_cage` int(11) NOT NULL,
-  PRIMARY KEY (`ID_type_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `code_master`
---
-
-CREATE TABLE IF NOT EXISTS `code_master` (
-  `ID_code` varchar(10) NOT NULL,
-  `description_code` text NOT NULL,
+CREATE TABLE IF NOT EXISTS `Code_tb` (
+  `ID_code` varchar(10) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
   PRIMARY KEY (`ID_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `maintance_person_master`
+-- Table structure for table `Maintance_person_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `maintance_person_master` (
-  `ID_person` varchar(10) NOT NULL,
-  `name_person` text NOT NULL,
+CREATE TABLE IF NOT EXISTS `Maintance_person_tb` (
+  `ID_person` int(11) NOT NULL AUTO_INCREMENT,
+  `name_person` char(20) NOT NULL,
   PRIMARY KEY (`ID_person`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_action_log`
+-- Table structure for table `User_tb`
 --
 
-CREATE TABLE IF NOT EXISTS `user_action_log` (
-  `ID_code` varchar(10) NOT NULL,
-  `ID_animal` varchar(10) DEFAULT NULL,
-  `ID_cage` varchar(10) DEFAULT NULL,
-  KEY `ID_code` (`ID_code`),
-  KEY `ID_animal` (`ID_animal`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_master`
---
-
-CREATE TABLE IF NOT EXISTS `user_master` (
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  PRIMARY KEY (`username`)
+CREATE TABLE IF NOT EXISTS `User_tb` (
+  `user_name` char(20) NOT NULL DEFAULT '',
+  `password` char(20) NOT NULL,
+  PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -154,36 +139,24 @@ CREATE TABLE IF NOT EXISTS `user_master` (
 --
 
 --
--- Constraints for table `alert_details`
+-- Constraints for table `Alert_details_tb`
 --
-ALTER TABLE `alert_details`
-  ADD CONSTRAINT `alert_details_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`),
-  ADD CONSTRAINT `alert_details_ibfk_2` FOREIGN KEY (`ID_Code`) REFERENCES `code_master` (`ID_code`);
+ALTER TABLE `Alert_details_tb`
+  ADD CONSTRAINT `Alert_details_tb_ibfk_1` FOREIGN KEY (`ID_code`) REFERENCES `Code_tb` (`ID_code`),
+  ADD CONSTRAINT `Alert_details_tb_ibfk_2` FOREIGN KEY (`ID_cage`) REFERENCES `Cage_tb` (`ID_cage`);
 
 --
--- Constraints for table `animal_master`
+-- Constraints for table `Animal_tb`
 --
-ALTER TABLE `animal_master`
-  ADD CONSTRAINT `animal_master_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
+ALTER TABLE `Animal_tb`
+  ADD CONSTRAINT `Animal_tb_ibfk_1` FOREIGN KEY (`ID_animalrecord`) REFERENCES `AnimalRecords_tb` (`ID_animalrecord`),
+  ADD CONSTRAINT `Animal_tb_ibfk_2` FOREIGN KEY (`ID_cage`) REFERENCES `Cage_tb` (`ID_cage`);
 
 --
--- Constraints for table `cage_master`
+-- Constraints for table `Cage_status_tb`
 --
-ALTER TABLE `cage_master`
-  ADD CONSTRAINT `cage_master_ibfk_1` FOREIGN KEY (`ID_type_cage`) REFERENCES `cage_type_master` (`ID_type_cage`);
-
---
--- Constraints for table `cage_status`
---
-ALTER TABLE `cage_status`
-  ADD CONSTRAINT `cage_status_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `cage_master` (`ID_cage`);
-
---
--- Constraints for table `user_action_log`
---
-ALTER TABLE `user_action_log`
-  ADD CONSTRAINT `user_action_log_ibfk_1` FOREIGN KEY (`ID_code`) REFERENCES `code_master` (`ID_code`),
-  ADD CONSTRAINT `user_action_log_ibfk_2` FOREIGN KEY (`ID_animal`) REFERENCES `animal_master` (`ID_Animal`);
+ALTER TABLE `Cage_status_tb`
+  ADD CONSTRAINT `Cage_status_tb_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `Cage_tb` (`ID_cage`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
