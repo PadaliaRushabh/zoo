@@ -24,6 +24,8 @@ interface DatabaseMiddleLayer_t {
     function getAffectedRows();
     
     function fetch(); // fetch row by row
+    
+    function createTable($table , array $col , $pk , array $fk);
     	
 	}
 
@@ -66,6 +68,45 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 				return $this->_result;
 			}
 			throw new MySQLAdapterException('Error executing the specified query ' . $query . mysqli_error($this->_link));
+		}
+		
+		function createTable($table , array $col , $pk  , array $fk = null){
+			
+				//get cols 
+				if($this->is_assoc($col)){
+					$value = array();
+					foreach($col as $col => $Dtype){
+						$value[] = $col .' '. $Dtype;
+					}
+					$value = implode(',' , $value);
+				}
+				else{
+					throw new Exception('Invalid Data: Array not associative');
+				}
+					 
+				//get fk
+				if ($fk!=null){
+					if($this->is_assoc($fk)){
+						$fk_v = array();
+						foreach($fk as $col => $fk_t){
+							$fk_v[] = ' FOREIGN KEY ' . '(' . $col . ') ' . 'REFERENCES ' . $fk_t;
+						}
+						$fk_v = implode(',' , $fk_v);
+					}
+					else{
+						throw new Exception('Invalid Data: Array not associative');
+					}
+				}
+				$sql = 'CREATE TABLE ' . $table . '( '
+						.($value)
+						.' ,PRIMARY KEY (' . $pk .') '
+						.(isset($fk_v) ? ' ,' . $fk_v : null)
+						.') ENGINE=InnoDB' ; 
+						
+				$this->query($sql);
+				return $this->getAffectedRows();
+				
+			
 		}
 		
 		public function delete($table, $where = null){
@@ -191,22 +232,25 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 			$this->disconnect();
 		}
 	}
-	//$array = array("localhost","root","Rushabh","zoo1");
-	//$obj = new Mysql_DatabaseMiddleLayer($array);
-	/*$data = array(	
-				'cage_name' => 'fortiger'
-				, 'cage_type' => 'silver'
-				, 'cage_location' => 'old location'
+	/*$array = array("localhost","root","Rushabh","zoo1");
+	$obj = new Mysql_DatabaseMiddleLayer($array);
+	$data = array(	
+				'cage_name' => 'forcat'
+				, 'cage_type' => 'gold'
+				, 'cage_location' => 'new and old location'
 				, 'cage_width' => 12
 				, 'cage_height' => 30
 				, 'cage_doors' => 40
 	
-			);*/
-	//$CR = $obj->delete('test_mysql' , 'id = 7');
+			);
+	$CR = $obj->update('test_mysql' , $data , 'id = 3');
 	//echo $CR;
 	
 	//$result = 	$obj->query("SELECT * FROM test_mysql");
+	$data = array('Customer_SID' => 'Customer(ID)' ,'Order_Date' => 'test_TB8(Order_Date)' );
+	$data2 = array('Order_ID' =>'varchar(30)', 'Order_Date'=>'date','Customer_SID'=>'integer');
 	
-
+	$obj->createTable('test_TB275' , $data2 ,'Order_ID');*/
+	
 
 ?>

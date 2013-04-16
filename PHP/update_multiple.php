@@ -2,7 +2,7 @@
 
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
-$password=""; // Mysql password 
+$password="Rushabh"; // Mysql password 
 $db_name="zoo1"; // Database name 
 $tbl_name="test_mysql"; // Table name 
 
