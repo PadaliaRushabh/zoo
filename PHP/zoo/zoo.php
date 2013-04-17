@@ -26,12 +26,17 @@ interface tMove{
 
 class animal implements tView, tEdit, tMove{
 	
-	public function add(array $data){
+	protected $_object;
+	
+	public function __construct(){
 		
 		$connection = array("localhost","root","Rushabh","zoo");
-		$animal = new Mysql_DatabaseMiddleLayer($connection);
+		$this->_object = new Mysql_DatabaseMiddleLayer($connection);
+	}
+	
+	public function add(array $data){
 		
-		$animal->insert('Cage_tb', $data);
+		$this->_object->insert('Cage_tb', $data);
 	}
 	
 	public function view($where, $order){}
@@ -53,12 +58,12 @@ class cage implements tview, tEdit{
 
 $an = new animal();
 $data = array(
-				'name'=>'Blackbuck'
-				,'size_height'=> 50
+				'name'=>'For African porcupine'
+				,'size_height'=> 20
 				,'size_width'=>75
 				,'size_length'=>60
-				,'location_latitude'=>1.40495
-				,'location_longitude'=>103.79049
+				,'location_latitude'=>2.40495
+				,'location_longitude'=>104.79049
 				,'doors'=>2
 				,'animal_limit'=>2
 		
