@@ -54,17 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Animal_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Animal_Form.Designer.cs">
+      <DependentUpon>Add_Animal_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Cage_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add_Cage_Form.Designer.cs">
       <DependentUpon>Add_Cage_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Add_Type_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Add_Type_Form.Designer.cs">
-      <DependentUpon>Add_Type_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseRetrieve.cs" />
     <Compile Include="Main_Form.cs">
@@ -82,11 +82,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add_Animal_Form.resx">
+      <DependentUpon>Add_Animal_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Cage_Form.resx">
       <DependentUpon>Add_Cage_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Add_Type_Form.resx">
-      <DependentUpon>Add_Type_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>

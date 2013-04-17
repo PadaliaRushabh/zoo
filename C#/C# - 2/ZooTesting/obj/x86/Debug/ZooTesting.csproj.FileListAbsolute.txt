@@ -7,5 +7,5 @@ C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.pdb
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Login_Form.resources
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Main_Form.resources
-C:\Users\nghabaoduy\Documents\Visual Studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Type_Form.resources
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Cage_Form.resources
+C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Animal_Form.resources
