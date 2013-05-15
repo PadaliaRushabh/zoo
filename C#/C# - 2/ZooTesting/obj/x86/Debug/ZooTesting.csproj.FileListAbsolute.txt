@@ -9,3 +9,14 @@ C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Main_Form.resources
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Cage_Form.resources
 C:\Users\nghabaoduy\documents\visual studio 2010\Projects\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Animal_Form.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\bin\Debug\ZooTesting.exe
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\bin\Debug\ZooTesting.pdb
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.csprojResolveAssemblyReference.cache
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Animal_Form.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Add_Cage_Form.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Login_Form.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Main_Form.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.Properties.Resources.resources
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.csproj.GenerateResource.Cache
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.exe
+C:\Users\nghabaoduy\Desktop\ZooTesting\ZooTesting\obj\x86\Debug\ZooTesting.pdb

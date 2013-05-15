@@ -66,6 +66,12 @@
     <Compile Include="Add_Cage_Form.Designer.cs">
       <DependentUpon>Add_Cage_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alert.cs" />
+    <Compile Include="AlertManager.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="AnimalManager.cs" />
+    <Compile Include="Cage.cs" />
+    <Compile Include="CageManager.cs" />
     <Compile Include="DatabaseRetrieve.cs" />
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>

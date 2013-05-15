@@ -60,6 +60,7 @@
             this.animal_name_input.Name = "animal_name_input";
             this.animal_name_input.Size = new System.Drawing.Size(222, 20);
             this.animal_name_input.TabIndex = 19;
+            this.animal_name_input.TextChanged += new System.EventHandler(this.animal_name_input_TextChanged);
             // 
             // animal_name_label
             // 
@@ -79,6 +80,7 @@
             this.Controls.Add(this.add_new_animal_btn);
             this.Controls.Add(this.animal_name_input);
             this.Controls.Add(this.animal_name_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Add_Animal_Form";
             this.Text = "Add New Animal";
             this.ResumeLayout(false);

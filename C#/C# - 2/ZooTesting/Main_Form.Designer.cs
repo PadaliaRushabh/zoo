@@ -34,6 +34,29 @@
             this.content_panel = new System.Windows.Forms.Panel();
             this.tab_control = new System.Windows.Forms.TabControl();
             this.cage_tab = new System.Windows.Forms.TabPage();
+            this.animal_limit_input = new System.Windows.Forms.NumericUpDown();
+            this.people_limit_input = new System.Windows.Forms.NumericUpDown();
+            this.animal_limit_label = new System.Windows.Forms.Label();
+            this.human_limit_label = new System.Windows.Forms.Label();
+            this.exhibit_inside_dropdown = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.human_inside_dropdown = new System.Windows.Forms.ComboBox();
+            this.cage_closed_dropdown = new System.Windows.Forms.ComboBox();
+            this.human_inside_label = new System.Windows.Forms.Label();
+            this.cage_closed_label = new System.Windows.Forms.Label();
+            this.cage_status_label = new System.Windows.Forms.Label();
+            this.cage_door_input = new System.Windows.Forms.NumericUpDown();
+            this.location_longitude_input = new System.Windows.Forms.NumericUpDown();
+            this.location_latitude_input = new System.Windows.Forms.NumericUpDown();
+            this.size_length_input = new System.Windows.Forms.NumericUpDown();
+            this.size_width_input = new System.Windows.Forms.NumericUpDown();
+            this.size_height_input = new System.Windows.Forms.NumericUpDown();
+            this.cage_door_label = new System.Windows.Forms.Label();
+            this.cage_id_output = new System.Windows.Forms.Label();
+            this.cage_id_label = new System.Windows.Forms.Label();
+            this.cage_name_input = new System.Windows.Forms.TextBox();
+            this.location_longitude_label = new System.Windows.Forms.Label();
+            this.location_latitude_label = new System.Windows.Forms.Label();
             this.size_length_label = new System.Windows.Forms.Label();
             this.size_width_label = new System.Windows.Forms.Label();
             this.size_height_label = new System.Windows.Forms.Label();
@@ -44,20 +67,6 @@
             this.cage_delete_btn = new System.Windows.Forms.Button();
             this.cage_update_btn = new System.Windows.Forms.Button();
             this.animal_tab = new System.Windows.Forms.TabPage();
-            this.location_tab = new System.Windows.Forms.TabPage();
-            this.type_tab = new System.Windows.Forms.TabPage();
-            this.location_latitude_label = new System.Windows.Forms.Label();
-            this.location_longitude_label = new System.Windows.Forms.Label();
-            this.cage_name_input = new System.Windows.Forms.TextBox();
-            this.size_height_input = new System.Windows.Forms.TextBox();
-            this.size_width_input = new System.Windows.Forms.TextBox();
-            this.size_length_input = new System.Windows.Forms.TextBox();
-            this.location_latitude_input = new System.Windows.Forms.TextBox();
-            this.location_longitude_input = new System.Windows.Forms.TextBox();
-            this.cage_id_label = new System.Windows.Forms.Label();
-            this.cage_id_output = new System.Windows.Forms.Label();
-            this.cage_door_label = new System.Windows.Forms.Label();
-            this.cage_door_input = new System.Windows.Forms.TextBox();
             this.animal_id_output = new System.Windows.Forms.Label();
             this.animal_id_label = new System.Windows.Forms.Label();
             this.animal_name_input = new System.Windows.Forms.TextBox();
@@ -67,18 +76,20 @@
             this.add_new_animal_btn = new System.Windows.Forms.Button();
             this.delete_animal_btn = new System.Windows.Forms.Button();
             this.update_animal_btn = new System.Windows.Forms.Button();
-            this.animal_manager_list_box = new System.Windows.Forms.ListBox();
-            this.Inventory = new System.Windows.Forms.ListBox();
-            this.cage_choosen = new System.Windows.Forms.ComboBox();
-            this.insert_btn = new System.Windows.Forms.Button();
-            this.AM_doors_label = new System.Windows.Forms.Label();
-            this.AM_cage_id_label = new System.Windows.Forms.Label();
-            this.AM_location_longitude_label = new System.Windows.Forms.Label();
-            this.AM_location_latitude_label = new System.Windows.Forms.Label();
-            this.AM_size_length_label = new System.Windows.Forms.Label();
-            this.AM_size_width_label = new System.Windows.Forms.Label();
-            this.AM_size_height_label = new System.Windows.Forms.Label();
-            this.AM_cage_name_label = new System.Windows.Forms.Label();
+            this.location_tab = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.alert_id_input = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.alert_list_box = new System.Windows.Forms.ListBox();
+            this.add_new_alert_btn = new System.Windows.Forms.Button();
+            this.delete_alert_btn = new System.Windows.Forms.Button();
+            this.update_alert_btn = new System.Windows.Forms.Button();
+            this.type_tab = new System.Windows.Forms.TabPage();
+            this.limit = new System.Windows.Forms.Label();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AM_animal_list_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.AM_doors_output = new System.Windows.Forms.Label();
             this.AM_cage_id_output = new System.Windows.Forms.Label();
             this.AM_location_longitude_output = new System.Windows.Forms.Label();
@@ -87,11 +98,33 @@
             this.AM_size_width_output = new System.Windows.Forms.Label();
             this.AM_size_height_output = new System.Windows.Forms.Label();
             this.AM_cage_name_output = new System.Windows.Forms.Label();
+            this.AM_doors_label = new System.Windows.Forms.Label();
+            this.AM_cage_id_label = new System.Windows.Forms.Label();
+            this.AM_location_longitude_label = new System.Windows.Forms.Label();
+            this.AM_location_latitude_label = new System.Windows.Forms.Label();
+            this.AM_size_length_label = new System.Windows.Forms.Label();
+            this.AM_size_width_label = new System.Windows.Forms.Label();
+            this.AM_size_height_label = new System.Windows.Forms.Label();
+            this.AM_cage_name_label = new System.Windows.Forms.Label();
+            this.insert_btn = new System.Windows.Forms.Button();
+            this.cage_choosen = new System.Windows.Forms.ComboBox();
+            this.Inventory = new System.Windows.Forms.ListBox();
+            this.animal_manager_list_box = new System.Windows.Forms.ListBox();
+            this.alert_message_input = new System.Windows.Forms.RichTextBox();
             this.logout_panel.SuspendLayout();
             this.content_panel.SuspendLayout();
             this.tab_control.SuspendLayout();
             this.cage_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.animal_limit_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.people_limit_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cage_door_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.location_longitude_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.location_latitude_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_length_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_width_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_height_input)).BeginInit();
             this.animal_tab.SuspendLayout();
+            this.location_tab.SuspendLayout();
             this.type_tab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,15 +179,26 @@
             // 
             // cage_tab
             // 
+            this.cage_tab.Controls.Add(this.animal_limit_input);
+            this.cage_tab.Controls.Add(this.people_limit_input);
+            this.cage_tab.Controls.Add(this.animal_limit_label);
+            this.cage_tab.Controls.Add(this.human_limit_label);
+            this.cage_tab.Controls.Add(this.exhibit_inside_dropdown);
+            this.cage_tab.Controls.Add(this.label3);
+            this.cage_tab.Controls.Add(this.human_inside_dropdown);
+            this.cage_tab.Controls.Add(this.cage_closed_dropdown);
+            this.cage_tab.Controls.Add(this.human_inside_label);
+            this.cage_tab.Controls.Add(this.cage_closed_label);
+            this.cage_tab.Controls.Add(this.cage_status_label);
             this.cage_tab.Controls.Add(this.cage_door_input);
-            this.cage_tab.Controls.Add(this.cage_door_label);
-            this.cage_tab.Controls.Add(this.cage_id_output);
-            this.cage_tab.Controls.Add(this.cage_id_label);
             this.cage_tab.Controls.Add(this.location_longitude_input);
             this.cage_tab.Controls.Add(this.location_latitude_input);
             this.cage_tab.Controls.Add(this.size_length_input);
             this.cage_tab.Controls.Add(this.size_width_input);
             this.cage_tab.Controls.Add(this.size_height_input);
+            this.cage_tab.Controls.Add(this.cage_door_label);
+            this.cage_tab.Controls.Add(this.cage_id_output);
+            this.cage_tab.Controls.Add(this.cage_id_label);
             this.cage_tab.Controls.Add(this.cage_name_input);
             this.cage_tab.Controls.Add(this.location_longitude_label);
             this.cage_tab.Controls.Add(this.location_latitude_label);
@@ -174,6 +218,307 @@
             this.cage_tab.TabIndex = 0;
             this.cage_tab.Text = "Cage Detail";
             this.cage_tab.UseVisualStyleBackColor = true;
+            // 
+            // animal_limit_input
+            // 
+            this.animal_limit_input.Location = new System.Drawing.Point(255, 319);
+            this.animal_limit_input.Margin = new System.Windows.Forms.Padding(2);
+            this.animal_limit_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.animal_limit_input.Name = "animal_limit_input";
+            this.animal_limit_input.Size = new System.Drawing.Size(144, 20);
+            this.animal_limit_input.TabIndex = 37;
+            this.animal_limit_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.animal_limit_input.ValueChanged += new System.EventHandler(this.animal_limit_input_ValueChanged);
+            // 
+            // people_limit_input
+            // 
+            this.people_limit_input.Location = new System.Drawing.Point(255, 288);
+            this.people_limit_input.Margin = new System.Windows.Forms.Padding(2);
+            this.people_limit_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.people_limit_input.Name = "people_limit_input";
+            this.people_limit_input.Size = new System.Drawing.Size(144, 20);
+            this.people_limit_input.TabIndex = 36;
+            this.people_limit_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.people_limit_input.ValueChanged += new System.EventHandler(this.people_limit_input_ValueChanged);
+            // 
+            // animal_limit_label
+            // 
+            this.animal_limit_label.AutoSize = true;
+            this.animal_limit_label.Location = new System.Drawing.Point(134, 321);
+            this.animal_limit_label.Name = "animal_limit_label";
+            this.animal_limit_label.Size = new System.Drawing.Size(65, 13);
+            this.animal_limit_label.TabIndex = 35;
+            this.animal_limit_label.Text = "Animal Limit:";
+            // 
+            // human_limit_label
+            // 
+            this.human_limit_label.AutoSize = true;
+            this.human_limit_label.Location = new System.Drawing.Point(134, 290);
+            this.human_limit_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.human_limit_label.Name = "human_limit_label";
+            this.human_limit_label.Size = new System.Drawing.Size(67, 13);
+            this.human_limit_label.TabIndex = 34;
+            this.human_limit_label.Text = "People Limit:";
+            // 
+            // exhibit_inside_dropdown
+            // 
+            this.exhibit_inside_dropdown.FormattingEnabled = true;
+            this.exhibit_inside_dropdown.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.exhibit_inside_dropdown.Location = new System.Drawing.Point(557, 126);
+            this.exhibit_inside_dropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.exhibit_inside_dropdown.Name = "exhibit_inside_dropdown";
+            this.exhibit_inside_dropdown.Size = new System.Drawing.Size(92, 21);
+            this.exhibit_inside_dropdown.TabIndex = 33;
+            this.exhibit_inside_dropdown.SelectedIndexChanged += new System.EventHandler(this.exhibit_inside_dropdown_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(478, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Exhibit Inside";
+            // 
+            // human_inside_dropdown
+            // 
+            this.human_inside_dropdown.FormattingEnabled = true;
+            this.human_inside_dropdown.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.human_inside_dropdown.Location = new System.Drawing.Point(557, 94);
+            this.human_inside_dropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.human_inside_dropdown.Name = "human_inside_dropdown";
+            this.human_inside_dropdown.Size = new System.Drawing.Size(92, 21);
+            this.human_inside_dropdown.TabIndex = 31;
+            this.human_inside_dropdown.SelectedIndexChanged += new System.EventHandler(this.human_inside_dropdown_SelectedIndexChanged);
+            // 
+            // cage_closed_dropdown
+            // 
+            this.cage_closed_dropdown.FormattingEnabled = true;
+            this.cage_closed_dropdown.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cage_closed_dropdown.Location = new System.Drawing.Point(557, 61);
+            this.cage_closed_dropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.cage_closed_dropdown.Name = "cage_closed_dropdown";
+            this.cage_closed_dropdown.Size = new System.Drawing.Size(92, 21);
+            this.cage_closed_dropdown.TabIndex = 30;
+            this.cage_closed_dropdown.SelectedIndexChanged += new System.EventHandler(this.cage_closed_dropdown_SelectedIndexChanged);
+            // 
+            // human_inside_label
+            // 
+            this.human_inside_label.AutoSize = true;
+            this.human_inside_label.Location = new System.Drawing.Point(478, 97);
+            this.human_inside_label.Name = "human_inside_label";
+            this.human_inside_label.Size = new System.Drawing.Size(72, 13);
+            this.human_inside_label.TabIndex = 29;
+            this.human_inside_label.Text = "Human Inside";
+            // 
+            // cage_closed_label
+            // 
+            this.cage_closed_label.AutoSize = true;
+            this.cage_closed_label.Location = new System.Drawing.Point(478, 63);
+            this.cage_closed_label.Name = "cage_closed_label";
+            this.cage_closed_label.Size = new System.Drawing.Size(67, 13);
+            this.cage_closed_label.TabIndex = 28;
+            this.cage_closed_label.Text = "Cage Closed";
+            // 
+            // cage_status_label
+            // 
+            this.cage_status_label.AutoSize = true;
+            this.cage_status_label.Location = new System.Drawing.Point(478, 30);
+            this.cage_status_label.Name = "cage_status_label";
+            this.cage_status_label.Size = new System.Drawing.Size(68, 13);
+            this.cage_status_label.TabIndex = 27;
+            this.cage_status_label.Text = "Cage Status:";
+            // 
+            // cage_door_input
+            // 
+            this.cage_door_input.Location = new System.Drawing.Point(255, 255);
+            this.cage_door_input.Margin = new System.Windows.Forms.Padding(2);
+            this.cage_door_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cage_door_input.Name = "cage_door_input";
+            this.cage_door_input.Size = new System.Drawing.Size(144, 20);
+            this.cage_door_input.TabIndex = 26;
+            this.cage_door_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.cage_door_input.ValueChanged += new System.EventHandler(this.cage_door_input_ValueChanged);
+            // 
+            // location_longitude_input
+            // 
+            this.location_longitude_input.Location = new System.Drawing.Point(255, 222);
+            this.location_longitude_input.Margin = new System.Windows.Forms.Padding(2);
+            this.location_longitude_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.location_longitude_input.Name = "location_longitude_input";
+            this.location_longitude_input.Size = new System.Drawing.Size(144, 20);
+            this.location_longitude_input.TabIndex = 25;
+            this.location_longitude_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.location_longitude_input.ValueChanged += new System.EventHandler(this.location_longitude_input_ValueChanged);
+            // 
+            // location_latitude_input
+            // 
+            this.location_latitude_input.Location = new System.Drawing.Point(255, 193);
+            this.location_latitude_input.Margin = new System.Windows.Forms.Padding(2);
+            this.location_latitude_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.location_latitude_input.Name = "location_latitude_input";
+            this.location_latitude_input.Size = new System.Drawing.Size(144, 20);
+            this.location_latitude_input.TabIndex = 24;
+            this.location_latitude_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.location_latitude_input.ValueChanged += new System.EventHandler(this.location_latitude_input_ValueChanged);
+            // 
+            // size_length_input
+            // 
+            this.size_length_input.Location = new System.Drawing.Point(255, 159);
+            this.size_length_input.Margin = new System.Windows.Forms.Padding(2);
+            this.size_length_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_length_input.Name = "size_length_input";
+            this.size_length_input.Size = new System.Drawing.Size(144, 20);
+            this.size_length_input.TabIndex = 23;
+            this.size_length_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_length_input.ValueChanged += new System.EventHandler(this.size_length_input_ValueChanged);
+            // 
+            // size_width_input
+            // 
+            this.size_width_input.Location = new System.Drawing.Point(255, 126);
+            this.size_width_input.Margin = new System.Windows.Forms.Padding(2);
+            this.size_width_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_width_input.Name = "size_width_input";
+            this.size_width_input.Size = new System.Drawing.Size(144, 20);
+            this.size_width_input.TabIndex = 22;
+            this.size_width_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_width_input.ValueChanged += new System.EventHandler(this.size_width_input_ValueChanged);
+            // 
+            // size_height_input
+            // 
+            this.size_height_input.Location = new System.Drawing.Point(255, 90);
+            this.size_height_input.Margin = new System.Windows.Forms.Padding(2);
+            this.size_height_input.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_height_input.Name = "size_height_input";
+            this.size_height_input.Size = new System.Drawing.Size(144, 20);
+            this.size_height_input.TabIndex = 21;
+            this.size_height_input.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.size_height_input.ValueChanged += new System.EventHandler(this.size_height_input_ValueChanged);
+            // 
+            // cage_door_label
+            // 
+            this.cage_door_label.AutoSize = true;
+            this.cage_door_label.Location = new System.Drawing.Point(134, 259);
+            this.cage_door_label.Name = "cage_door_label";
+            this.cage_door_label.Size = new System.Drawing.Size(38, 13);
+            this.cage_door_label.TabIndex = 19;
+            this.cage_door_label.Text = "Doors:";
+            // 
+            // cage_id_output
+            // 
+            this.cage_id_output.AutoSize = true;
+            this.cage_id_output.Location = new System.Drawing.Point(255, 29);
+            this.cage_id_output.Name = "cage_id_output";
+            this.cage_id_output.Size = new System.Drawing.Size(23, 13);
+            this.cage_id_output.TabIndex = 18;
+            this.cage_id_output.Text = "null";
+            // 
+            // cage_id_label
+            // 
+            this.cage_id_label.AutoSize = true;
+            this.cage_id_label.Location = new System.Drawing.Point(134, 30);
+            this.cage_id_label.Name = "cage_id_label";
+            this.cage_id_label.Size = new System.Drawing.Size(49, 13);
+            this.cage_id_label.TabIndex = 17;
+            this.cage_id_label.Text = "Cage ID:";
+            // 
+            // cage_name_input
+            // 
+            this.cage_name_input.Location = new System.Drawing.Point(255, 61);
+            this.cage_name_input.Name = "cage_name_input";
+            this.cage_name_input.ReadOnly = true;
+            this.cage_name_input.Size = new System.Drawing.Size(145, 20);
+            this.cage_name_input.TabIndex = 11;
+            // 
+            // location_longitude_label
+            // 
+            this.location_longitude_label.AutoSize = true;
+            this.location_longitude_label.Location = new System.Drawing.Point(133, 226);
+            this.location_longitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.location_longitude_label.Name = "location_longitude_label";
+            this.location_longitude_label.Size = new System.Drawing.Size(101, 13);
+            this.location_longitude_label.TabIndex = 10;
+            this.location_longitude_label.Text = "Location Longitude:";
+            // 
+            // location_latitude_label
+            // 
+            this.location_latitude_label.AutoSize = true;
+            this.location_latitude_label.Location = new System.Drawing.Point(134, 193);
+            this.location_latitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.location_latitude_label.Name = "location_latitude_label";
+            this.location_latitude_label.Size = new System.Drawing.Size(92, 13);
+            this.location_latitude_label.TabIndex = 9;
+            this.location_latitude_label.Text = "Location Latitude:";
             // 
             // size_length_label
             // 
@@ -235,7 +580,7 @@
             // 
             // add_cage_btn
             // 
-            this.add_cage_btn.Location = new System.Drawing.Point(6, 287);
+            this.add_cage_btn.Location = new System.Drawing.Point(6, 359);
             this.add_cage_btn.Name = "add_cage_btn";
             this.add_cage_btn.Size = new System.Drawing.Size(107, 23);
             this.add_cage_btn.TabIndex = 0;
@@ -245,7 +590,7 @@
             // 
             // cage_delete_btn
             // 
-            this.cage_delete_btn.Location = new System.Drawing.Point(218, 287);
+            this.cage_delete_btn.Location = new System.Drawing.Point(218, 359);
             this.cage_delete_btn.Name = "cage_delete_btn";
             this.cage_delete_btn.Size = new System.Drawing.Size(90, 23);
             this.cage_delete_btn.TabIndex = 2;
@@ -255,7 +600,7 @@
             // 
             // cage_update_btn
             // 
-            this.cage_update_btn.Location = new System.Drawing.Point(119, 287);
+            this.cage_update_btn.Location = new System.Drawing.Point(119, 359);
             this.cage_update_btn.Name = "cage_update_btn";
             this.cage_update_btn.Size = new System.Drawing.Size(93, 23);
             this.cage_update_btn.TabIndex = 1;
@@ -282,142 +627,6 @@
             this.animal_tab.Text = "Animal Detail";
             this.animal_tab.UseVisualStyleBackColor = true;
             // 
-            // location_tab
-            // 
-            this.location_tab.Location = new System.Drawing.Point(4, 22);
-            this.location_tab.Name = "location_tab";
-            this.location_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.location_tab.Size = new System.Drawing.Size(749, 452);
-            this.location_tab.TabIndex = 2;
-            this.location_tab.Text = "Location";
-            this.location_tab.UseVisualStyleBackColor = true;
-            // 
-            // type_tab
-            // 
-            this.type_tab.Controls.Add(this.AM_doors_output);
-            this.type_tab.Controls.Add(this.AM_cage_id_output);
-            this.type_tab.Controls.Add(this.AM_location_longitude_output);
-            this.type_tab.Controls.Add(this.AM_location_latitude_output);
-            this.type_tab.Controls.Add(this.AM_size_length_output);
-            this.type_tab.Controls.Add(this.AM_size_width_output);
-            this.type_tab.Controls.Add(this.AM_size_height_output);
-            this.type_tab.Controls.Add(this.AM_cage_name_output);
-            this.type_tab.Controls.Add(this.AM_doors_label);
-            this.type_tab.Controls.Add(this.AM_cage_id_label);
-            this.type_tab.Controls.Add(this.AM_location_longitude_label);
-            this.type_tab.Controls.Add(this.AM_location_latitude_label);
-            this.type_tab.Controls.Add(this.AM_size_length_label);
-            this.type_tab.Controls.Add(this.AM_size_width_label);
-            this.type_tab.Controls.Add(this.AM_size_height_label);
-            this.type_tab.Controls.Add(this.AM_cage_name_label);
-            this.type_tab.Controls.Add(this.insert_btn);
-            this.type_tab.Controls.Add(this.cage_choosen);
-            this.type_tab.Controls.Add(this.Inventory);
-            this.type_tab.Controls.Add(this.animal_manager_list_box);
-            this.type_tab.Location = new System.Drawing.Point(4, 22);
-            this.type_tab.Name = "type_tab";
-            this.type_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.type_tab.Size = new System.Drawing.Size(749, 452);
-            this.type_tab.TabIndex = 3;
-            this.type_tab.Text = "Animal Manager";
-            this.type_tab.UseVisualStyleBackColor = true;
-            // 
-            // location_latitude_label
-            // 
-            this.location_latitude_label.AutoSize = true;
-            this.location_latitude_label.Location = new System.Drawing.Point(134, 193);
-            this.location_latitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.location_latitude_label.Name = "location_latitude_label";
-            this.location_latitude_label.Size = new System.Drawing.Size(92, 13);
-            this.location_latitude_label.TabIndex = 9;
-            this.location_latitude_label.Text = "Location Latitude:";
-            // 
-            // location_longitude_label
-            // 
-            this.location_longitude_label.AutoSize = true;
-            this.location_longitude_label.Location = new System.Drawing.Point(133, 226);
-            this.location_longitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.location_longitude_label.Name = "location_longitude_label";
-            this.location_longitude_label.Size = new System.Drawing.Size(101, 13);
-            this.location_longitude_label.TabIndex = 10;
-            this.location_longitude_label.Text = "Location Longitude:";
-            // 
-            // cage_name_input
-            // 
-            this.cage_name_input.Location = new System.Drawing.Point(255, 61);
-            this.cage_name_input.Name = "cage_name_input";
-            this.cage_name_input.Size = new System.Drawing.Size(145, 20);
-            this.cage_name_input.TabIndex = 11;
-            // 
-            // size_height_input
-            // 
-            this.size_height_input.Location = new System.Drawing.Point(255, 94);
-            this.size_height_input.Name = "size_height_input";
-            this.size_height_input.Size = new System.Drawing.Size(145, 20);
-            this.size_height_input.TabIndex = 12;
-            // 
-            // size_width_input
-            // 
-            this.size_width_input.Location = new System.Drawing.Point(255, 127);
-            this.size_width_input.Name = "size_width_input";
-            this.size_width_input.Size = new System.Drawing.Size(145, 20);
-            this.size_width_input.TabIndex = 13;
-            // 
-            // size_length_input
-            // 
-            this.size_length_input.Location = new System.Drawing.Point(255, 160);
-            this.size_length_input.Name = "size_length_input";
-            this.size_length_input.Size = new System.Drawing.Size(145, 20);
-            this.size_length_input.TabIndex = 14;
-            // 
-            // location_latitude_input
-            // 
-            this.location_latitude_input.Location = new System.Drawing.Point(255, 193);
-            this.location_latitude_input.Name = "location_latitude_input";
-            this.location_latitude_input.Size = new System.Drawing.Size(145, 20);
-            this.location_latitude_input.TabIndex = 15;
-            // 
-            // location_longitude_input
-            // 
-            this.location_longitude_input.Location = new System.Drawing.Point(255, 226);
-            this.location_longitude_input.Name = "location_longitude_input";
-            this.location_longitude_input.Size = new System.Drawing.Size(145, 20);
-            this.location_longitude_input.TabIndex = 16;
-            // 
-            // cage_id_label
-            // 
-            this.cage_id_label.AutoSize = true;
-            this.cage_id_label.Location = new System.Drawing.Point(134, 30);
-            this.cage_id_label.Name = "cage_id_label";
-            this.cage_id_label.Size = new System.Drawing.Size(49, 13);
-            this.cage_id_label.TabIndex = 17;
-            this.cage_id_label.Text = "Cage ID:";
-            // 
-            // cage_id_output
-            // 
-            this.cage_id_output.AutoSize = true;
-            this.cage_id_output.Location = new System.Drawing.Point(255, 29);
-            this.cage_id_output.Name = "cage_id_output";
-            this.cage_id_output.Size = new System.Drawing.Size(23, 13);
-            this.cage_id_output.TabIndex = 18;
-            this.cage_id_output.Text = "null";
-            // 
-            // cage_door_label
-            // 
-            this.cage_door_label.AutoSize = true;
-            this.cage_door_label.Location = new System.Drawing.Point(134, 259);
-            this.cage_door_label.Name = "cage_door_label";
-            this.cage_door_label.Size = new System.Drawing.Size(38, 13);
-            this.cage_door_label.TabIndex = 19;
-            this.cage_door_label.Text = "Doors:";
-            // 
-            // cage_door_input
-            // 
-            this.cage_door_input.Location = new System.Drawing.Point(255, 256);
-            this.cage_door_input.Name = "cage_door_input";
-            this.cage_door_input.Size = new System.Drawing.Size(145, 20);
-            this.cage_door_input.TabIndex = 20;
-            // 
             // animal_id_output
             // 
             this.animal_id_output.AutoSize = true;
@@ -442,6 +651,7 @@
             this.animal_name_input.Name = "animal_name_input";
             this.animal_name_input.Size = new System.Drawing.Size(145, 20);
             this.animal_name_input.TabIndex = 32;
+            this.animal_name_input.TextChanged += new System.EventHandler(this.animal_name_input_TextChanged);
             // 
             // animal_name_label
             // 
@@ -501,22 +711,333 @@
             this.update_animal_btn.UseVisualStyleBackColor = true;
             this.update_animal_btn.Click += new System.EventHandler(this.update_animal_btn_Click);
             // 
-            // animal_manager_list_box
+            // location_tab
             // 
-            this.animal_manager_list_box.FormattingEnabled = true;
-            this.animal_manager_list_box.Location = new System.Drawing.Point(23, 60);
-            this.animal_manager_list_box.Name = "animal_manager_list_box";
-            this.animal_manager_list_box.Size = new System.Drawing.Size(120, 225);
-            this.animal_manager_list_box.TabIndex = 4;
-            
+            this.location_tab.Controls.Add(this.alert_message_input);
+            this.location_tab.Controls.Add(this.label5);
+            this.location_tab.Controls.Add(this.alert_id_input);
+            this.location_tab.Controls.Add(this.label6);
+            this.location_tab.Controls.Add(this.alert_list_box);
+            this.location_tab.Controls.Add(this.add_new_alert_btn);
+            this.location_tab.Controls.Add(this.delete_alert_btn);
+            this.location_tab.Controls.Add(this.update_alert_btn);
+            this.location_tab.Location = new System.Drawing.Point(4, 22);
+            this.location_tab.Name = "location_tab";
+            this.location_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.location_tab.Size = new System.Drawing.Size(749, 452);
+            this.location_tab.TabIndex = 2;
+            this.location_tab.Text = "Alert";
+            this.location_tab.UseVisualStyleBackColor = true;
             // 
-            // Inventory
+            // label5
             // 
-            this.Inventory.FormattingEnabled = true;
-            this.Inventory.Location = new System.Drawing.Point(288, 60);
-            this.Inventory.Name = "Inventory";
-            this.Inventory.Size = new System.Drawing.Size(120, 225);
-            this.Inventory.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(148, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Alert Id:";
+            // 
+            // alert_id_input
+            // 
+            this.alert_id_input.Location = new System.Drawing.Point(254, 12);
+            this.alert_id_input.Name = "alert_id_input";
+            this.alert_id_input.ReadOnly = true;
+            this.alert_id_input.Size = new System.Drawing.Size(145, 20);
+            this.alert_id_input.TabIndex = 45;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(148, 46);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Alert Message";
+            // 
+            // alert_list_box
+            // 
+            this.alert_list_box.FormattingEnabled = true;
+            this.alert_list_box.Location = new System.Drawing.Point(20, 15);
+            this.alert_list_box.Name = "alert_list_box";
+            this.alert_list_box.Size = new System.Drawing.Size(116, 238);
+            this.alert_list_box.TabIndex = 43;
+            // 
+            // add_new_alert_btn
+            // 
+            this.add_new_alert_btn.Location = new System.Drawing.Point(20, 272);
+            this.add_new_alert_btn.Name = "add_new_alert_btn";
+            this.add_new_alert_btn.Size = new System.Drawing.Size(107, 23);
+            this.add_new_alert_btn.TabIndex = 40;
+            this.add_new_alert_btn.Text = "Add New Animal";
+            this.add_new_alert_btn.UseVisualStyleBackColor = true;
+            // 
+            // delete_alert_btn
+            // 
+            this.delete_alert_btn.Location = new System.Drawing.Point(232, 272);
+            this.delete_alert_btn.Name = "delete_alert_btn";
+            this.delete_alert_btn.Size = new System.Drawing.Size(90, 23);
+            this.delete_alert_btn.TabIndex = 42;
+            this.delete_alert_btn.Text = "Delete";
+            this.delete_alert_btn.UseVisualStyleBackColor = true;
+            // 
+            // update_alert_btn
+            // 
+            this.update_alert_btn.Location = new System.Drawing.Point(133, 272);
+            this.update_alert_btn.Name = "update_alert_btn";
+            this.update_alert_btn.Size = new System.Drawing.Size(93, 23);
+            this.update_alert_btn.TabIndex = 41;
+            this.update_alert_btn.Text = "Update";
+            this.update_alert_btn.UseVisualStyleBackColor = true;
+            // 
+            // type_tab
+            // 
+            this.type_tab.Controls.Add(this.limit);
+            this.type_tab.Controls.Add(this.delete_btn);
+            this.type_tab.Controls.Add(this.label2);
+            this.type_tab.Controls.Add(this.AM_animal_list_label);
+            this.type_tab.Controls.Add(this.label1);
+            this.type_tab.Controls.Add(this.AM_doors_output);
+            this.type_tab.Controls.Add(this.AM_cage_id_output);
+            this.type_tab.Controls.Add(this.AM_location_longitude_output);
+            this.type_tab.Controls.Add(this.AM_location_latitude_output);
+            this.type_tab.Controls.Add(this.AM_size_length_output);
+            this.type_tab.Controls.Add(this.AM_size_width_output);
+            this.type_tab.Controls.Add(this.AM_size_height_output);
+            this.type_tab.Controls.Add(this.AM_cage_name_output);
+            this.type_tab.Controls.Add(this.AM_doors_label);
+            this.type_tab.Controls.Add(this.AM_cage_id_label);
+            this.type_tab.Controls.Add(this.AM_location_longitude_label);
+            this.type_tab.Controls.Add(this.AM_location_latitude_label);
+            this.type_tab.Controls.Add(this.AM_size_length_label);
+            this.type_tab.Controls.Add(this.AM_size_width_label);
+            this.type_tab.Controls.Add(this.AM_size_height_label);
+            this.type_tab.Controls.Add(this.AM_cage_name_label);
+            this.type_tab.Controls.Add(this.insert_btn);
+            this.type_tab.Controls.Add(this.cage_choosen);
+            this.type_tab.Controls.Add(this.Inventory);
+            this.type_tab.Controls.Add(this.animal_manager_list_box);
+            this.type_tab.Location = new System.Drawing.Point(4, 22);
+            this.type_tab.Name = "type_tab";
+            this.type_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.type_tab.Size = new System.Drawing.Size(749, 452);
+            this.type_tab.TabIndex = 3;
+            this.type_tab.Text = "Animal Manager";
+            this.type_tab.UseVisualStyleBackColor = true;
+            // 
+            // limit
+            // 
+            this.limit.AutoSize = true;
+            this.limit.Location = new System.Drawing.Point(369, 335);
+            this.limit.Name = "limit";
+            this.limit.Size = new System.Drawing.Size(35, 13);
+            this.limit.TabIndex = 40;
+            this.limit.Text = "label4";
+            this.limit.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // delete_btn
+            // 
+            this.delete_btn.Location = new System.Drawing.Point(284, 330);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(75, 23);
+            this.delete_btn.TabIndex = 39;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(284, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Assigned Animal:";
+            // 
+            // AM_animal_list_label
+            // 
+            this.AM_animal_list_label.AutoSize = true;
+            this.AM_animal_list_label.Location = new System.Drawing.Point(19, 80);
+            this.AM_animal_list_label.Name = "AM_animal_list_label";
+            this.AM_animal_list_label.Size = new System.Drawing.Size(68, 13);
+            this.AM_animal_list_label.TabIndex = 37;
+            this.AM_animal_list_label.Text = "Animal Type:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(71, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Choose_cage:";
+            // 
+            // AM_doors_output
+            // 
+            this.AM_doors_output.AutoSize = true;
+            this.AM_doors_output.Location = new System.Drawing.Point(573, 322);
+            this.AM_doors_output.Name = "AM_doors_output";
+            this.AM_doors_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_doors_output.TabIndex = 35;
+            this.AM_doors_output.Text = "null";
+            // 
+            // AM_cage_id_output
+            // 
+            this.AM_cage_id_output.AutoSize = true;
+            this.AM_cage_id_output.Location = new System.Drawing.Point(573, 93);
+            this.AM_cage_id_output.Name = "AM_cage_id_output";
+            this.AM_cage_id_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_cage_id_output.TabIndex = 34;
+            this.AM_cage_id_output.Text = "null";
+            // 
+            // AM_location_longitude_output
+            // 
+            this.AM_location_longitude_output.AutoSize = true;
+            this.AM_location_longitude_output.Location = new System.Drawing.Point(572, 289);
+            this.AM_location_longitude_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_location_longitude_output.Name = "AM_location_longitude_output";
+            this.AM_location_longitude_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_location_longitude_output.TabIndex = 33;
+            this.AM_location_longitude_output.Text = "null";
+            // 
+            // AM_location_latitude_output
+            // 
+            this.AM_location_latitude_output.AutoSize = true;
+            this.AM_location_latitude_output.Location = new System.Drawing.Point(573, 256);
+            this.AM_location_latitude_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_location_latitude_output.Name = "AM_location_latitude_output";
+            this.AM_location_latitude_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_location_latitude_output.TabIndex = 32;
+            this.AM_location_latitude_output.Text = "null";
+            // 
+            // AM_size_length_output
+            // 
+            this.AM_size_length_output.AutoSize = true;
+            this.AM_size_length_output.Location = new System.Drawing.Point(573, 226);
+            this.AM_size_length_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_length_output.Name = "AM_size_length_output";
+            this.AM_size_length_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_size_length_output.TabIndex = 31;
+            this.AM_size_length_output.Text = "null";
+            // 
+            // AM_size_width_output
+            // 
+            this.AM_size_width_output.AutoSize = true;
+            this.AM_size_width_output.Location = new System.Drawing.Point(573, 193);
+            this.AM_size_width_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_width_output.Name = "AM_size_width_output";
+            this.AM_size_width_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_size_width_output.TabIndex = 30;
+            this.AM_size_width_output.Text = "null";
+            // 
+            // AM_size_height_output
+            // 
+            this.AM_size_height_output.AutoSize = true;
+            this.AM_size_height_output.Location = new System.Drawing.Point(573, 157);
+            this.AM_size_height_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_height_output.Name = "AM_size_height_output";
+            this.AM_size_height_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_size_height_output.TabIndex = 29;
+            this.AM_size_height_output.Text = "null";
+            // 
+            // AM_cage_name_output
+            // 
+            this.AM_cage_name_output.AutoSize = true;
+            this.AM_cage_name_output.Location = new System.Drawing.Point(573, 124);
+            this.AM_cage_name_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_cage_name_output.Name = "AM_cage_name_output";
+            this.AM_cage_name_output.Size = new System.Drawing.Size(23, 13);
+            this.AM_cage_name_output.TabIndex = 28;
+            this.AM_cage_name_output.Text = "null";
+            // 
+            // AM_doors_label
+            // 
+            this.AM_doors_label.AutoSize = true;
+            this.AM_doors_label.Location = new System.Drawing.Point(438, 322);
+            this.AM_doors_label.Name = "AM_doors_label";
+            this.AM_doors_label.Size = new System.Drawing.Size(38, 13);
+            this.AM_doors_label.TabIndex = 27;
+            this.AM_doors_label.Text = "Doors:";
+            // 
+            // AM_cage_id_label
+            // 
+            this.AM_cage_id_label.AutoSize = true;
+            this.AM_cage_id_label.Location = new System.Drawing.Point(438, 93);
+            this.AM_cage_id_label.Name = "AM_cage_id_label";
+            this.AM_cage_id_label.Size = new System.Drawing.Size(49, 13);
+            this.AM_cage_id_label.TabIndex = 26;
+            this.AM_cage_id_label.Text = "Cage ID:";
+            // 
+            // AM_location_longitude_label
+            // 
+            this.AM_location_longitude_label.AutoSize = true;
+            this.AM_location_longitude_label.Location = new System.Drawing.Point(437, 289);
+            this.AM_location_longitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_location_longitude_label.Name = "AM_location_longitude_label";
+            this.AM_location_longitude_label.Size = new System.Drawing.Size(101, 13);
+            this.AM_location_longitude_label.TabIndex = 25;
+            this.AM_location_longitude_label.Text = "Location Longitude:";
+            // 
+            // AM_location_latitude_label
+            // 
+            this.AM_location_latitude_label.AutoSize = true;
+            this.AM_location_latitude_label.Location = new System.Drawing.Point(438, 256);
+            this.AM_location_latitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_location_latitude_label.Name = "AM_location_latitude_label";
+            this.AM_location_latitude_label.Size = new System.Drawing.Size(92, 13);
+            this.AM_location_latitude_label.TabIndex = 24;
+            this.AM_location_latitude_label.Text = "Location Latitude:";
+            // 
+            // AM_size_length_label
+            // 
+            this.AM_size_length_label.AutoSize = true;
+            this.AM_size_length_label.Location = new System.Drawing.Point(438, 226);
+            this.AM_size_length_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_length_label.Name = "AM_size_length_label";
+            this.AM_size_length_label.Size = new System.Drawing.Size(66, 13);
+            this.AM_size_length_label.TabIndex = 23;
+            this.AM_size_length_label.Text = "Size Length:";
+            // 
+            // AM_size_width_label
+            // 
+            this.AM_size_width_label.AutoSize = true;
+            this.AM_size_width_label.Location = new System.Drawing.Point(438, 193);
+            this.AM_size_width_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_width_label.Name = "AM_size_width_label";
+            this.AM_size_width_label.Size = new System.Drawing.Size(61, 13);
+            this.AM_size_width_label.TabIndex = 22;
+            this.AM_size_width_label.Text = "Size Width:";
+            // 
+            // AM_size_height_label
+            // 
+            this.AM_size_height_label.AutoSize = true;
+            this.AM_size_height_label.Location = new System.Drawing.Point(438, 157);
+            this.AM_size_height_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_size_height_label.Name = "AM_size_height_label";
+            this.AM_size_height_label.Size = new System.Drawing.Size(64, 13);
+            this.AM_size_height_label.TabIndex = 21;
+            this.AM_size_height_label.Text = "Size Height:";
+            // 
+            // AM_cage_name_label
+            // 
+            this.AM_cage_name_label.AutoSize = true;
+            this.AM_cage_name_label.Location = new System.Drawing.Point(438, 124);
+            this.AM_cage_name_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
+            this.AM_cage_name_label.Name = "AM_cage_name_label";
+            this.AM_cage_name_label.Size = new System.Drawing.Size(69, 13);
+            this.AM_cage_name_label.TabIndex = 20;
+            this.AM_cage_name_label.Text = "Cage  Name:";
+            // 
+            // insert_btn
+            // 
+            this.insert_btn.Location = new System.Drawing.Point(173, 165);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.TabIndex = 7;
+            this.insert_btn.Text = "Insert >";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
             // cage_choosen
             // 
@@ -527,171 +1048,29 @@
             this.cage_choosen.TabIndex = 6;
             this.cage_choosen.SelectedIndexChanged += new System.EventHandler(this.cage_choosen_SelectedIndexChanged);
             // 
-            // insert_btn
+            // Inventory
             // 
-            this.insert_btn.Location = new System.Drawing.Point(177, 126);
-            this.insert_btn.Name = "insert_btn";
-            this.insert_btn.Size = new System.Drawing.Size(75, 23);
-            this.insert_btn.TabIndex = 7;
-            this.insert_btn.Text = "button1";
-            this.insert_btn.UseVisualStyleBackColor = true;
-            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
+            this.Inventory.FormattingEnabled = true;
+            this.Inventory.Location = new System.Drawing.Point(284, 99);
+            this.Inventory.Name = "Inventory";
+            this.Inventory.Size = new System.Drawing.Size(120, 225);
+            this.Inventory.TabIndex = 5;
             // 
-            // AM_doors_label
+            // animal_manager_list_box
             // 
-            this.AM_doors_label.AutoSize = true;
-            this.AM_doors_label.Location = new System.Drawing.Point(442, 283);
-            this.AM_doors_label.Name = "AM_doors_label";
-            this.AM_doors_label.Size = new System.Drawing.Size(38, 13);
-            this.AM_doors_label.TabIndex = 27;
-            this.AM_doors_label.Text = "Doors:";
+            this.animal_manager_list_box.FormattingEnabled = true;
+            this.animal_manager_list_box.Location = new System.Drawing.Point(19, 99);
+            this.animal_manager_list_box.Name = "animal_manager_list_box";
+            this.animal_manager_list_box.Size = new System.Drawing.Size(120, 225);
+            this.animal_manager_list_box.TabIndex = 4;
             // 
-            // AM_cage_id_label
+            // alert_message_input
             // 
-            this.AM_cage_id_label.AutoSize = true;
-            this.AM_cage_id_label.Location = new System.Drawing.Point(442, 54);
-            this.AM_cage_id_label.Name = "AM_cage_id_label";
-            this.AM_cage_id_label.Size = new System.Drawing.Size(49, 13);
-            this.AM_cage_id_label.TabIndex = 26;
-            this.AM_cage_id_label.Text = "Cage ID:";
-            // 
-            // AM_location_longitude_label
-            // 
-            this.AM_location_longitude_label.AutoSize = true;
-            this.AM_location_longitude_label.Location = new System.Drawing.Point(441, 250);
-            this.AM_location_longitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_location_longitude_label.Name = "AM_location_longitude_label";
-            this.AM_location_longitude_label.Size = new System.Drawing.Size(101, 13);
-            this.AM_location_longitude_label.TabIndex = 25;
-            this.AM_location_longitude_label.Text = "Location Longitude:";
-            // 
-            // AM_location_latitude_label
-            // 
-            this.AM_location_latitude_label.AutoSize = true;
-            this.AM_location_latitude_label.Location = new System.Drawing.Point(442, 217);
-            this.AM_location_latitude_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_location_latitude_label.Name = "AM_location_latitude_label";
-            this.AM_location_latitude_label.Size = new System.Drawing.Size(92, 13);
-            this.AM_location_latitude_label.TabIndex = 24;
-            this.AM_location_latitude_label.Text = "Location Latitude:";
-            // 
-            // AM_size_length_label
-            // 
-            this.AM_size_length_label.AutoSize = true;
-            this.AM_size_length_label.Location = new System.Drawing.Point(442, 187);
-            this.AM_size_length_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_length_label.Name = "AM_size_length_label";
-            this.AM_size_length_label.Size = new System.Drawing.Size(66, 13);
-            this.AM_size_length_label.TabIndex = 23;
-            this.AM_size_length_label.Text = "Size Length:";
-            // 
-            // AM_size_width_label
-            // 
-            this.AM_size_width_label.AutoSize = true;
-            this.AM_size_width_label.Location = new System.Drawing.Point(442, 154);
-            this.AM_size_width_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_width_label.Name = "AM_size_width_label";
-            this.AM_size_width_label.Size = new System.Drawing.Size(61, 13);
-            this.AM_size_width_label.TabIndex = 22;
-            this.AM_size_width_label.Text = "Size Width:";
-            // 
-            // AM_size_height_label
-            // 
-            this.AM_size_height_label.AutoSize = true;
-            this.AM_size_height_label.Location = new System.Drawing.Point(442, 118);
-            this.AM_size_height_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_height_label.Name = "AM_size_height_label";
-            this.AM_size_height_label.Size = new System.Drawing.Size(64, 13);
-            this.AM_size_height_label.TabIndex = 21;
-            this.AM_size_height_label.Text = "Size Height:";
-            // 
-            // AM_cage_name_label
-            // 
-            this.AM_cage_name_label.AutoSize = true;
-            this.AM_cage_name_label.Location = new System.Drawing.Point(442, 85);
-            this.AM_cage_name_label.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_cage_name_label.Name = "AM_cage_name_label";
-            this.AM_cage_name_label.Size = new System.Drawing.Size(69, 13);
-            this.AM_cage_name_label.TabIndex = 20;
-            this.AM_cage_name_label.Text = "Cage  Name:";
-            // 
-            // AM_doors_output
-            // 
-            this.AM_doors_output.AutoSize = true;
-            this.AM_doors_output.Location = new System.Drawing.Point(577, 283);
-            this.AM_doors_output.Name = "AM_doors_output";
-            this.AM_doors_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_doors_output.TabIndex = 35;
-            this.AM_doors_output.Text = "null";
-            // 
-            // AM_cage_id_output
-            // 
-            this.AM_cage_id_output.AutoSize = true;
-            this.AM_cage_id_output.Location = new System.Drawing.Point(577, 54);
-            this.AM_cage_id_output.Name = "AM_cage_id_output";
-            this.AM_cage_id_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_cage_id_output.TabIndex = 34;
-            this.AM_cage_id_output.Text = "null";
-            // 
-            // AM_location_longitude_output
-            // 
-            this.AM_location_longitude_output.AutoSize = true;
-            this.AM_location_longitude_output.Location = new System.Drawing.Point(576, 250);
-            this.AM_location_longitude_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_location_longitude_output.Name = "AM_location_longitude_output";
-            this.AM_location_longitude_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_location_longitude_output.TabIndex = 33;
-            this.AM_location_longitude_output.Text = "null";
-            // 
-            // AM_location_latitude_output
-            // 
-            this.AM_location_latitude_output.AutoSize = true;
-            this.AM_location_latitude_output.Location = new System.Drawing.Point(577, 217);
-            this.AM_location_latitude_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_location_latitude_output.Name = "AM_location_latitude_output";
-            this.AM_location_latitude_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_location_latitude_output.TabIndex = 32;
-            this.AM_location_latitude_output.Text = "null";
-            // 
-            // AM_size_length_output
-            // 
-            this.AM_size_length_output.AutoSize = true;
-            this.AM_size_length_output.Location = new System.Drawing.Point(577, 187);
-            this.AM_size_length_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_length_output.Name = "AM_size_length_output";
-            this.AM_size_length_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_size_length_output.TabIndex = 31;
-            this.AM_size_length_output.Text = "null";
-            // 
-            // AM_size_width_output
-            // 
-            this.AM_size_width_output.AutoSize = true;
-            this.AM_size_width_output.Location = new System.Drawing.Point(577, 154);
-            this.AM_size_width_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_width_output.Name = "AM_size_width_output";
-            this.AM_size_width_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_size_width_output.TabIndex = 30;
-            this.AM_size_width_output.Text = "null";
-            // 
-            // AM_size_height_output
-            // 
-            this.AM_size_height_output.AutoSize = true;
-            this.AM_size_height_output.Location = new System.Drawing.Point(577, 118);
-            this.AM_size_height_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_size_height_output.Name = "AM_size_height_output";
-            this.AM_size_height_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_size_height_output.TabIndex = 29;
-            this.AM_size_height_output.Text = "null";
-            // 
-            // AM_cage_name_output
-            // 
-            this.AM_cage_name_output.AutoSize = true;
-            this.AM_cage_name_output.Location = new System.Drawing.Point(577, 85);
-            this.AM_cage_name_output.Margin = new System.Windows.Forms.Padding(5, 0, 3, 20);
-            this.AM_cage_name_output.Name = "AM_cage_name_output";
-            this.AM_cage_name_output.Size = new System.Drawing.Size(23, 13);
-            this.AM_cage_name_output.TabIndex = 28;
-            this.AM_cage_name_output.Text = "null";
+            this.alert_message_input.Location = new System.Drawing.Point(254, 46);
+            this.alert_message_input.Name = "alert_message_input";
+            this.alert_message_input.Size = new System.Drawing.Size(145, 207);
+            this.alert_message_input.TabIndex = 47;
+            this.alert_message_input.Text = "";
             // 
             // Main_Form
             // 
@@ -709,8 +1088,18 @@
             this.tab_control.ResumeLayout(false);
             this.cage_tab.ResumeLayout(false);
             this.cage_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.animal_limit_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.people_limit_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cage_door_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.location_longitude_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.location_latitude_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_length_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_width_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.size_height_input)).EndInit();
             this.animal_tab.ResumeLayout(false);
             this.animal_tab.PerformLayout();
+            this.location_tab.ResumeLayout(false);
+            this.location_tab.PerformLayout();
             this.type_tab.ResumeLayout(false);
             this.type_tab.PerformLayout();
             this.ResumeLayout(false);
@@ -737,17 +1126,11 @@
         private System.Windows.Forms.Label size_height_label;
         private System.Windows.Forms.Label size_length_label;
         private System.Windows.Forms.Label size_width_label;
-        private System.Windows.Forms.TextBox location_longitude_input;
-        private System.Windows.Forms.TextBox location_latitude_input;
-        private System.Windows.Forms.TextBox size_length_input;
-        private System.Windows.Forms.TextBox size_width_input;
-        private System.Windows.Forms.TextBox size_height_input;
         private System.Windows.Forms.TextBox cage_name_input;
         private System.Windows.Forms.Label location_longitude_label;
         private System.Windows.Forms.Label location_latitude_label;
         private System.Windows.Forms.Label cage_id_output;
         private System.Windows.Forms.Label cage_id_label;
-        private System.Windows.Forms.TextBox cage_door_input;
         private System.Windows.Forms.Label cage_door_label;
         private System.Windows.Forms.Label animal_id_output;
         private System.Windows.Forms.Label animal_id_label;
@@ -778,5 +1161,35 @@
         private System.Windows.Forms.Label AM_size_width_label;
         private System.Windows.Forms.Label AM_size_height_label;
         private System.Windows.Forms.Label AM_cage_name_label;
+        private System.Windows.Forms.Label AM_animal_list_label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown size_height_input;
+        private System.Windows.Forms.NumericUpDown size_width_input;
+        private System.Windows.Forms.NumericUpDown size_length_input;
+        private System.Windows.Forms.NumericUpDown cage_door_input;
+        private System.Windows.Forms.NumericUpDown location_longitude_input;
+        private System.Windows.Forms.NumericUpDown location_latitude_input;
+        private System.Windows.Forms.ComboBox human_inside_dropdown;
+        private System.Windows.Forms.ComboBox cage_closed_dropdown;
+        private System.Windows.Forms.Label human_inside_label;
+        private System.Windows.Forms.Label cage_closed_label;
+        private System.Windows.Forms.Label cage_status_label;
+        private System.Windows.Forms.ComboBox exhibit_inside_dropdown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown animal_limit_input;
+        private System.Windows.Forms.NumericUpDown people_limit_input;
+        private System.Windows.Forms.Label animal_limit_label;
+        private System.Windows.Forms.Label human_limit_label;
+        private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Label limit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox alert_id_input;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox alert_list_box;
+        private System.Windows.Forms.Button add_new_alert_btn;
+        private System.Windows.Forms.Button delete_alert_btn;
+        private System.Windows.Forms.Button update_alert_btn;
+        private System.Windows.Forms.RichTextBox alert_message_input;
     }
 }
