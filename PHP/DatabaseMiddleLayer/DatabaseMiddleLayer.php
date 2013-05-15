@@ -5,27 +5,35 @@ interface DatabaseMiddleLayer_t {
 		
 	function connect();
    
-    function disconnect(); 
+    	function disconnect(); 
    
-    function query($query); // Execute Query
+    	function query($query); // Execute Query
    
-    function select($table, $fields, $where, $order); // Select query
+    	function select($table, $fields, $where, $order); // Select query
    
-    function insert($table, array $data);
+    	function insert($table, array $data);
    
-    function update($table, array $data, $where);
+    	function update($table, array $data, $where);
    
    	function delete($table, $where);
    
-    function getInsertId();
+    	function getInsertId();
    
-    function countRows(); // return how many rows are fetched
+    	function countRows(); // return how many rows are fetched
    
-    function getAffectedRows();
+    	function getAffectedRows();
     
-    function fetch(); // fetch row by row
+    	function fetch(); // fetch row by row
     
-    function createTable($table , array $col , $pk , array $fk);
+    	function createTable($table , array $col , $pk , array $fk);
+    
+    	function quoteValue($value);
+    
+    	function freeResult();
+    
+    	function is_assoc($array);
+    
+    
     	
 	}
 
@@ -148,8 +156,8 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 					. 'FROM '. $table . " "
 					. ($where ? 'WHERE ' . $where . " " : null)
 					. ($order ? 'ORDER BY ' . $order. " " : null);
-			$this->query($sql);
-			return $this->countRows();
+			return $this->query($sql);
+			//return $this->countRows();
 		}
 		
 		public function insert($table, array $data){
@@ -166,7 +174,7 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 		}
 		
 		public function quoteValue($value) // put quote on string 
-		{
+		{	
 			$this->connect();
 			if ($value === null) {
 				$value = 'NULL';
@@ -232,9 +240,9 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 			$this->disconnect();
 		}
 	}
-	/*$array = array("localhost","root","Rushabh","zoo1");
+	$array = array("localhost","root","Rushabh","zoo");
 	$obj = new Mysql_DatabaseMiddleLayer($array);
-	$data = array(	
+	/*$data = array(	
 				'cage_name' => 'forcat'
 				, 'cage_type' => 'gold'
 				, 'cage_location' => 'new and old location'
@@ -242,15 +250,21 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 				, 'cage_height' => 30
 				, 'cage_doors' => 40
 	
-			);
-	$CR = $obj->update('test_mysql' , $data , 'id = 3');
+			);*/
+	$return  = $obj->select('Animal_tb', $fields="*");
+	while($row = mysqli_fetch_array($return))
+  {
+  echo $row['ID_animal'] . " " . $row['ID_cage'];
+
+  }
+	//$CR = $obj->update('test_mysql' , $data , 'id = 3');
 	//echo $CR;
 	
 	//$result = 	$obj->query("SELECT * FROM test_mysql");
-	$data = array('Customer_SID' => 'Customer(ID)' ,'Order_Date' => 'test_TB8(Order_Date)' );
-	$data2 = array('Order_ID' =>'varchar(30)', 'Order_Date'=>'date','Customer_SID'=>'integer');
+	//$data = array('Customer_SID' => 'Customer(ID)' ,'Order_Date' => 'test_TB8(Order_Date)' );
+	//$data2 = array('Order_ID' =>'varchar(30)', 'Order_Date'=>'date','Customer_SID'=>'integer');
 	
-	$obj->createTable('test_TB275' , $data2 ,'Order_ID');*/
+	//$obj->createTable('test_TB275' , $data2 ,'Order_ID');*/
 	
 
 ?>
