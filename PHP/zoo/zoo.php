@@ -3,115 +3,124 @@ include_once "../DatabaseMiddleLayer/DatabaseMiddleLayer.php";
 
 interface tView{
 	
-	 public function view($table , $fields , $where, $order);
+	 public function view($fields , $where, $order);
 }  
 
 interface tEdit{
 	
-	public function update($table, array $data, $where);
+	public function update(array $data, $where);
 	public function add(array $data);
-	public function delete($table,$where);
+	public function delete($where);
 	
 	
 }
 interface tMove{
 	
-	public function transfer($AnimalID , $to);	
-	public function getAnimalcage(array $AnimalID);
+	public function transfer(array $AnimalID);	
 }
 
-/*public class concreteFactory implements tView, tEdit,tMove{
+abstract class animal_A implements tView, tEdit, tMove{
 	
-	
-} */
-
-class animal implements tView, tEdit, tMove{
-	
+	protected $_objname;
 	protected $_object;
+	protected $_table;
 	
-	public function __construct(){
+	public function __construct($tb_name){
+		$error = false;
+		if($tb_name === 'Animal'){ $this->_table = 'Animal_tb';}
+		else if($tb_name === 'AnimalRecord') {$this->_table = 'AnimalRecords_tb';}
+		else {$error = true;}
 		
-		$connection = array("localhost","root","Rushabh","zoo");
-		$this->_object = new Mysql_DatabaseMiddleLayer($connection);
+		if(!$error){
+			$connection = array("localhost","root","Rushabh","zoo");
+			$this->_object = new Mysql_DatabaseMiddleLayer($connection);
+		}
+		else{
+			throw new Exception('Invalid Table');
+		}
+
 	}
 	
-	public function add(array $data){
-		
-		$this->_object->insert('Cage_tb', $data);
+	public function add(array $data){	
+		return $this->_object->insert($this->_table, $data);
 	}
 	
-	public function view($table ,$fields="*",$where=null, $order=null){
+	public function view($fields="*",$where=null, $order=null){
 			
-			$this->_object->select($table , $fields , $where , $order);
+			return $this->_object->select($this->_table , $fields , $where , $order);
 			//TODO:Generate Table
 	
 	}
-	public function update($table , array $data, $where = null){
-			$this->_object->update($table,$data, $where)
+
+	public function update(array $data, $where = null){
+			return $this->_object->update($this->_table,$data, $where);
 	}
-	public function delete($table,$where){
-			$this->_object->delete($table , $where);
+	public function delete($where){
+			return $this->_object->delete($this->_table , $where);
 	}
-	public function transfer(array $Animal_Cage_ID , $to){
-		
-		if(isCageNotFull(count($Animal_Cage_ID) , $to)){
-			$data = array();
-			for($i = 0 ; $i<count($Animal_Cage_ID) ; $i++){
-				$data[] = array($Animal_Cage_ID[$i] => $to]);
+	public function transfer(array $Animal_Cage_ID){
+			$ret = array();
+			if($this->_table ==='Animal_tb' ){
+				foreach($Animal_Cage_ID as $Animal_ID => $Cage_ID){
+					$set = array("ID_cage" => $Cage_ID);
+					$where = 'ID_animal = '. $Animal_ID;  
+			 		array_push($ret , $this->_object->update('Animal_tb',$set , $where));
+				}
 			}
-			 
-			$this->_object->update('Animal_tb',$data ,);
-		}
-		else{
-			return false;
-		}
-		return true;
-		
-	}
-	
-	public function isCageNotFull($AnimalsToInsert , $to){
-		$where = 'ID_Cage=' . $to;
-		$return = $this->_object->select('Animal_tb' , 'count(ID_cage)' , $where);
-		$row = mysqli_fetch_array($return);
-		$AnimalsToInsert = $row[0] + $AnimalsToInsert;
-		
-		($AnimalsToInsert > $row[0]) ? false : true;
+			else {return null;}
 			
+			return $ret;
 		
-	}
-	/*public function getAnimalcage(array $AnimalID){
-		$this->_object->select('Animal_tb', $fields="*");
-		while($row = mysqli_fetch_array($return)){
-			
-			echo $row['ID_animal'] . " " . $row['ID_cage'];
-
-		}
-	}*/
-	
-	
+	}		
 		
 }
 
-class cage implements tview, tEdit{
-	
-	public function view($where, $order){}
-	public function update(array $data, $where){}
-	public function delete($where){}
-	public function add(array $data){}
+class Animal extends animal_A {
+	public function __construct(){
+		parent::__construct('Animal');
+	}
 }
 
-$an = new animal();
-$data = array(
-				'name'=>'For African porcupine'
-				,'size_height'=> 20
-				,'size_width'=>75
-				,'size_length'=>60
-				,'location_latitude'=>2.40495
-				,'location_longitude'=>104.79049
-				,'doors'=>2
-				,'animal_limit'=>2
+class AnimalRecord extends animal_A{
+	public function __construct(){
+		parent::__construct('AnimalRecord');
+	}
+}
+
+class Cage implements tview, tEdit{
+	
+	protected $_object;
+
+	public function __construct(){
+		$connection = array("localhost","root","Rushabh","zoo");
+		$this->_object = new Mysql_DatabaseMiddleLayer($connection);
+	}
+
+	public function view($fields="*" , $where=null, $order=null){
+		return $this->_object->select('Cage_tb' , $fields , $where , $order);
+
+	}
+	public function update(array $data, $where = null){
+		return $this->_object->update('Cage_tb',$data, $where);
+	}
+	public function delete($where){
+		return $this->_object->delete('Cage_tb', $where);
+	}
+	public function add(array $data){
+		return $this->_object->insert('Cage_tb', $data);
+	}
+}
+
+#$an = new Animal();
+#$data = array(
+#				3=>6
+				
 		
-			);
-$an->add($data);
+		
+#	);
+#$result = $an->transfer($data);
+#echo $result;
+
 
 ?>
+
