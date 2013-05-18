@@ -15,7 +15,7 @@ interface DatabaseMiddleLayer_t {
    
     	function update($table, array $data, $where);
    
-   	function delete($table, $where);
+	function delete($table, $where);
    
     	function getInsertId();
    
@@ -151,11 +151,13 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 			return false;
 		}	
 			
-		public function select($table, $fields="*", $where=null,  $order=null){
-			$sql = 'SELECT ' . (strcmp($fields , "*") || strcasecmp($fields , 'ALL') ? '* ' :$fields . " ") 
+		public function select($table, $fields=null, $where=null,  $order=null){
+	
+			$sql = 'SELECT ' .($fields ?$fields . " ":"* " ) 
 					. 'FROM '. $table . " "
 					. ($where ? 'WHERE ' . $where . " " : null)
 					. ($order ? 'ORDER BY ' . $order. " " : null);
+		
 			return $this->query($sql);
 			//return $this->countRows();
 		}
@@ -240,31 +242,4 @@ class Mysql_DatabaseMiddleLayer implements DatabaseMiddleLayer_t {
 			$this->disconnect();
 		}
 	}
-	$array = array("localhost","root","Rushabh","zoo");
-	$obj = new Mysql_DatabaseMiddleLayer($array);
-	/*$data = array(	
-				'cage_name' => 'forcat'
-				, 'cage_type' => 'gold'
-				, 'cage_location' => 'new and old location'
-				, 'cage_width' => 12
-				, 'cage_height' => 30
-				, 'cage_doors' => 40
-	
-			);*/
-	$return  = $obj->select('Animal_tb', $fields="*");
-	while($row = mysqli_fetch_array($return))
-  {
-  echo $row['ID_animal'] . " " . $row['ID_cage'];
-
-  }
-	//$CR = $obj->update('test_mysql' , $data , 'id = 3');
-	//echo $CR;
-	
-	//$result = 	$obj->query("SELECT * FROM test_mysql");
-	//$data = array('Customer_SID' => 'Customer(ID)' ,'Order_Date' => 'test_TB8(Order_Date)' );
-	//$data2 = array('Order_ID' =>'varchar(30)', 'Order_Date'=>'date','Customer_SID'=>'integer');
-	
-	//$obj->createTable('test_TB275' , $data2 ,'Order_ID');*/
-	
-
 ?>
