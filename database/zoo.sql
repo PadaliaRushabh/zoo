@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2013 at 11:02 AM
--- Server version: 5.5.29-0ubuntu1
+-- Generation Time: May 18, 2013 at 01:40 PM
+-- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -49,7 +49,14 @@ CREATE TABLE IF NOT EXISTS `AnimalRecords_tb` (
   `ID_animalrecord` int(11) NOT NULL AUTO_INCREMENT,
   `name_animal` char(40) NOT NULL,
   PRIMARY KEY (`ID_animalrecord`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `AnimalRecords_tb`
+--
+
+INSERT INTO `AnimalRecords_tb` (`ID_animalrecord`, `name_animal`) VALUES
+(1, 'tiger');
 
 -- --------------------------------------------------------
 
@@ -64,21 +71,7 @@ CREATE TABLE IF NOT EXISTS `Animal_tb` (
   PRIMARY KEY (`ID_animal`),
   KEY `ID_animalrecord` (`ID_animalrecord`),
   KEY `ID_cage` (`ID_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Cage_status_tb`
---
-
-CREATE TABLE IF NOT EXISTS `Cage_status_tb` (
-  `ID_cage` int(11) NOT NULL DEFAULT '0',
-  `isopen` tinyint(1) NOT NULL,
-  `human_inside` int(11) NOT NULL,
-  `exhibit_inside` int(11) NOT NULL,
-  PRIMARY KEY (`ID_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -95,9 +88,11 @@ CREATE TABLE IF NOT EXISTS `Cage_tb` (
   `location_latitude` float NOT NULL,
   `location_longitude` float NOT NULL,
   `doors` int(11) NOT NULL,
-  `animal_limit` int(11) NOT NULL,
+  `isopen` tinyint(1) NOT NULL,
+  `human_inside` tinyint(1) NOT NULL,
+  `exhibit_inside` tinyint(1) NOT NULL,
   PRIMARY KEY (`ID_cage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -152,12 +147,6 @@ ALTER TABLE `Alert_details_tb`
 ALTER TABLE `Animal_tb`
   ADD CONSTRAINT `Animal_tb_ibfk_1` FOREIGN KEY (`ID_animalrecord`) REFERENCES `AnimalRecords_tb` (`ID_animalrecord`),
   ADD CONSTRAINT `Animal_tb_ibfk_2` FOREIGN KEY (`ID_cage`) REFERENCES `Cage_tb` (`ID_cage`);
-
---
--- Constraints for table `Cage_status_tb`
---
-ALTER TABLE `Cage_status_tb`
-  ADD CONSTRAINT `Cage_status_tb_ibfk_1` FOREIGN KEY (`ID_cage`) REFERENCES `Cage_tb` (`ID_cage`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
