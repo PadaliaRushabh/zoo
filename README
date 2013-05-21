@@ -1,29 +1,4 @@
 Zoo/cage management system - Assignment 1
 
-DIR STRUCTURE
-
-└── php
-    ├── Misc
-    │   ├── Admin UI prototype beta
-    │   ├── log
-    │   └── Testing
-    └── ZOO Management
-        ├── database
-        └── PHP - ZOO Management
-|___C#
-
-FOLDER INFORMATION
-
-Admin UI prototype beta - Contains the beta version of Admin UI
-
-log - Is a classfile for generating log during program execution
-Testing - contains code which are in testing phase.
-Testing/GrideView - Contains code and json file to generate table dynamically like asp.net griddeview
-Testing/Message - contains code for async messaging passing between server and client.
-Zoo Management - Contains our working code
-of Zoo Management System and database files.
-Zoo Management/database - Contains sql script and ER diagram
-Zoo Management/PHP - ZOO Management - Contains our working code
-of Zoo Management System.
-
+The goal of zoo management project is create a tool for zoo administrators to store information about their zoo on a computerized database system which is divided into two parts: the desktop application and the admin UI (CMS system). The website provides a system, which stores important data of the zoo such as, the number of animals along with their IDs and names, the number of cages with its size and ID, number of animals inside each cage, and location of cages, among other useful information. This information can only be updated or deleted through the admin UI. Whereas on the desktop application we are planning to have push notification which will help the user to receive notifications about the new update, whereas the other features are similar to admin UI and the main feature we will be having is assigning the person for error occurred. This report is a continued as on the report 1 to show the task completed from the week 1 until the week 12.
 
