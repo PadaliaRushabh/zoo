@@ -1,0 +1,4 @@
+
+1.Alert Manager->Code ID of first index does not update
+2.Timer issue still not fixed.
+3.Resolve button should set the end time time to current time + set isopen to false/Off
