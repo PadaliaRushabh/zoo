@@ -1,9 +1,0 @@
-C:\Users\Kevin\Desktop\Zoo\Zoo\bin\Debug\Zoo.exe
-C:\Users\Kevin\Desktop\Zoo\Zoo\bin\Debug\Zoo.pdb
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\Zoo.Properties.Resources.resources
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\Zoo.exe
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\Zoo.pdb
-C:\Users\Kevin\Desktop\Zoo\Zoo\obj\x86\Debug\Zoo.Form1.resources
